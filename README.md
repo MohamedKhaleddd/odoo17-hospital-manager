@@ -14,8 +14,7 @@
 <p>
   <a href="#-features">Features</a>
   •
-  <a href="#-screenshots">Screenshots</a>
-  •
+  
   <a href="#-installation">Installation</a>
   •
   <a href="#-project-structure">Structure</a>
@@ -159,37 +158,6 @@ Odoo 17
 
 ---
 
-## 📸 Screenshots
-
-> Add your project screenshots here to showcase the application.
-
-### 🏥 Hospital Dashboard
-
-<div align="center">
-
-<img src="https://placehold.co/1000x500/714B67/FFFFFF?text=Hospital+Manager" alt="Hospital Manager">
-
-</div>
-
-### 👤 Patients
-
-<div align="center">
-
-<img src="https://placehold.co/1000x500/714B67/FFFFFF?text=Patients+Management" alt="Patients">
-
-</div>
-
-### 📅 Appointments
-
-<div align="center">
-
-<img src="https://placehold.co/1000x500/714B67/FFFFFF?text=Appointments" alt="Appointments">
-
-</div>
-
-> Replace the placeholder images above with screenshots from your Odoo application.
-
----
 
 ## ⚡ Installation
 
