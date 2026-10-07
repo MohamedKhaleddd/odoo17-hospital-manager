@@ -14,10 +14,11 @@
 <p>
   <a href="#-features">Features</a>
   •
-  
   <a href="#-installation">Installation</a>
   •
   <a href="#-project-structure">Structure</a>
+  •
+  <a href="#-tech-stack">Tech Stack</a>
 </p>
 
 </div>
@@ -157,7 +158,6 @@ Odoo 17
 | 📦 **Odoo ORM**      | Database Operations          |
 
 ---
-
 
 ## ⚡ Installation
 
