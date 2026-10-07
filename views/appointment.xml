@@ -1,0 +1,132 @@
+<odoo>
+    <record id="appointment_view_tree" model="ir.ui.view">
+        <field name="name">Appointmnet Tree</field>
+        <field name="model">my_appointment</field>
+        <field name="arch" type="xml">
+            <tree string="Appointments">
+
+                <field name="name"></field>
+                <field name="patient_id"></field>
+                <field name="patient_age"></field>
+                <field name="doctor_id"></field>
+                <field name="app_date"></field>
+                <field name="note"></field>
+                <field name="state"></field>
+            </tree>
+
+        </field>
+    </record>
+
+    <record id="appointment_view_form" model="ir.ui.view">
+        <field name="name">Appointments Form</field>
+        <field name="model">my_appointment</field>
+        <field name="arch" type="xml">
+               <form string="">
+                        <sheet>
+                            <header>
+                            <button name="get_confirm" string="Confirm" type="object" 
+                            invisible="state!='draft'" class = "btn-primary"
+                            />
+                            <button name="get_done" string="Done" type="object" 
+                            invisible="state!='confirm'" class="btn-success"
+                            />
+                            <button name="get_cancel" string="Cancel" type="object" 
+                            invisible="state=='done' or state=='cancel'" class="btn-danger"
+                            />
+                            <field name="state" widget="statusbar"/>
+                            </header>
+                            <h1>
+                                <field name="name" 
+                                readonly="1"
+                                ></field>
+                            </h1>
+                            <group>
+                                <group string="Patient data">
+                                    <field name="patient_id"></field>
+                                    <field name="patient_age"></field>
+                                </group>
+
+                                <group string="Description">
+                                    <field name="note"></field>
+                                </group>
+                                <group string="Book">
+                                    <field name="app_date"></field>
+                                </group>
+                                <group>
+                                    <field name="doctor_id"></field>
+                                    <field name="note"></field>
+                                </group>
+                                
+                            </group>
+                            <notebook>
+                                <page string="Predescription">
+                                    <field name="predescription_id"></field>
+                                    
+                                </page>
+                                <page string="Doctor Notes">
+                                    <group>
+                                    <field name="doctor_notes"></field>
+                                    </group>
+                                    
+                                </page>
+                            </notebook>
+                        </sheet>
+                        <div class="oe_chatter">
+                            <field name="message_follower_ids" widget="mail_followers"/>
+                            
+                            <field name="activity_ids" widget="mail_activity"/>
+                            
+                            <field name="message_ids"
+                                widget="mail_thread"
+                                options="{'post_refresh': 'recipients'}"/>
+                        </div>
+                    </form>
+                </field>
+            </record>
+
+
+    <record id="my_hospital.appointment_action" model="ir.actions.act_window">
+        <field name="name">Appointement Action</field>
+        <field name="res_model">my_appointment</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Add Appointment .......
+            </p>
+        </field>
+    </record>
+
+    <record id="predescription_form" model="ir.ui.view">
+        <field name="name">Predescription_form</field>
+        <field name='model'>predescription</field>
+        <field name='arch' type='xml'>
+            <form string="Predescription_form">
+                        
+               <group>
+                  <group >
+                       <field name="name"></field>             
+                  </group>
+                  <group>
+                       <field name="notes"></field>
+                 </group>
+                                
+                     </group>
+                    </form>
+                </field>
+            </record>
+
+
+
+
+    <record id="predescrition_view" model="ir.ui.view">
+        <field name="name">Predescrition_tree</field>
+        <field name="model">predescription</field>
+        <field name="arch" type="xml">
+            <tree>
+            <field name="name"></field>
+            <field name="notes"></field>
+            </tree>
+        </field>
+    </record>
+
+</odoo>

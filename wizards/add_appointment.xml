@@ -1,0 +1,45 @@
+<odoo>
+    <record id="add_appointment_view" model="ir.ui.view">
+        <field name="name">add_appointment_view</field>
+        <field name="model">add_appointment</field>
+        <field name="arch" type="xml">
+                <form string="Add Appointment">
+                        <sheet>
+                            <group>
+                                <group>
+                                    <field name="patient_id" 
+                                    
+                                    options="{'no_create_edit': True,'no_create':True}"
+                                    
+                                    ></field>
+                                    <field name="doctor_id" 
+                                    options="{'no_create_edit': True,'no_create':True}"></field>
+                                    
+                                </group>
+                                <group>
+                                    <field name="note"></field>
+                                    <field name="app_date"></field>
+                                </group>
+                                
+                            </group>
+                            <footer>
+                                <button name="confirm_appointment" string="confirm" type="object" 
+                                class="btn-primary"></button>
+                                <button string="cancel" special="cancel" class="btn-secondary"></button>
+                            </footer>
+                        </sheet>
+                    </form>
+                </field>
+            </record>
+        
+
+
+
+    <record id="my_hospital.add_appointment_action" model="ir.actions.act_window">
+        <field name="name">add_appointment_action</field>
+        <field name="res_model">add_appointment</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="add_appointment_view"></field>
+        <field name="target">new</field>
+    </record>
+</odoo>

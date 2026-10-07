@@ -1,0 +1,44 @@
+<odoo>
+    <record id="doctor_view_ui" model="ir.ui.view">
+        <field name="name">Doctor_View</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"></field>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='access_rights']" position="inside">
+            <group name="doctor_section" string="Doctor Manage">
+            <field name="is_doctor"/>
+            <field name="is_supervisor"/>
+                
+            </group>
+                
+            </xpath>
+        
+        
+        </field>
+    </record>
+
+    <record id="my_hospital.doctor_action" model="ir.actions.act_window">
+        <field name="name">doctors_action</field>
+        <field name="res_model">res.users</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="domain">[('is_doctor','=',True)]</field>
+        <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face"> Add Doctor ... </p>
+        </field>
+    </record>
+    
+    <record id="doctor_form_view" model="ir.ui.view">
+        <field name="name">Doctor view</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_simple_form"></field>
+        <field name="arch" type="xml">
+        <xpath expr="//field[@name='mobile']" position="after">
+        <field name="is_doctor"/>
+        <field name="is_supervisor"/>
+            
+        </xpath>
+        
+        </field>
+    </record>
+
+</odoo>

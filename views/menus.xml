@@ -1,0 +1,56 @@
+<odoo>
+
+    <menuitem
+        id="hospital_root"
+        name="Hospital"
+        sequence="1"
+        action="my_hospital.appointment_action"/>
+
+    <menuitem
+        id="resources_menu"
+        name="Resources"
+        parent="hospital_root"
+        sequence="0"/>
+
+    <menuitem
+        id="patient_list"
+        name="Patients"
+        parent="resources_menu"
+        action="my_hospital.patient_list_action"
+        sequence="0"/>
+
+    <menuitem
+        id="hospital_doctors_menu"
+        name="Doctors"
+        parent="resources_menu"
+        action="my_hospital.doctor_action"
+        sequence="1"/>
+
+    <menuitem
+        id="transactions_menu"
+        name="Transactions"
+        parent="hospital_root"
+        sequence="1"/>
+
+    <menuitem
+        id="hospital_appointment"
+        name="Appointments"
+        parent="transactions_menu"
+        action="my_hospital.appointment_action"
+        sequence="0"/>
+    
+    <menuitem 
+        id="hospital_medicines"
+        parent="transactions_menu"
+        name="Medicines"
+        action="my_hospital.medicines_action"
+        sequence="1"
+    />
+    <menuitem 
+        id="hospital_add_appointment"
+        name="Add Appointment"
+        parent="transactions_menu"
+        action="my_hospital.add_appointment_action"
+        sequence="2"/>
+
+</odoo>

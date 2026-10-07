@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_my_appointment,my_appointment,model_my_appointment,base.group_user,1,1,1,1
+access_predescription,predescription,model_predescription,base.group_user,1,1,1,1
+access_medicines,medicines,model_medicines,base.group_user,1,1,1,1
+access_add_appointment,add_appointment,model_add_appointment,base.group_user,1,1,1,1
+
+
